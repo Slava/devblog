@@ -26,15 +26,6 @@ app.get("/:y/:m/:d/:title", function(req, res) {
     res.render("post.ejs", {post:p})
 })
 
-app.get("/:y/:m/:d/:title/md", function(req, res) {
-    var y = req.params.y
-    ,   m = req.params.m
-    ,   d = req.params.d
-    ,   t = req.params.title
-    ,   p = new Post([y,m,d,t].join('-') + '.md')
-    res.render("post-md.ejs", {post:p})
-})
-
 // GET "/rss"
 app.get("/rss", function(req, res) {    
     res.type('text/xml')
