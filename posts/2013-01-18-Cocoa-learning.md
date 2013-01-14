@@ -69,6 +69,16 @@ Used to select values in ranges. Can be vertical, horizontal and circular. Can s
 ```
 
 #### `NSField`
+Single line input field. Uneditable fields are used as labels.  `NSSecureTextField` is subclass which is used for passwords. 
+
+```objectivec
+- (NSString *)stringValue
+- (void)setStringValue:(NSString *)aString
+- (NSObject *)objectValue
+- (void)setObjectValue:(NSObject *)obj
+```
+
+Second pair is used in case you use `NSFormatter`s or just `description` method of object.
 
 ### My mappings for Cocoa objects
 
