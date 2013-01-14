@@ -1,3 +1,5 @@
+In last couple days I realized that I feel very uncomfortable writing Javascript code. It might be a result of lack of knowledge how does language work, all the time I just used my C knowledge combined with Python experience. One evening I decided to learn very basics of Javascript and took notes.
+
 ### Data types:
 
 * Number

@@ -8,7 +8,8 @@
            <%- posts[i].created().getDate() %>
            , <%- posts[i].created().getFullYear() %>
        </div>
-       <div class="body"><%- posts[i].html() %></div>
+       <div class="body"><%- posts[i].desc() %></div>
+       <a href="<%- posts[i].url()%>">more</a>
        <hr />
    </article>
 <% } %>
