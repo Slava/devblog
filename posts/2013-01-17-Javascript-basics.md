@@ -25,28 +25,24 @@ To convert string to integer use `parseInt(str, base=2)`, to float use `parseFlo
 Anything combined with `NaN` is `NaN` and you can check for it using `isNaN(number)`.
 
 Also JS has values `Infinity` and `-Infinity`. They are achiveable dividing by 0. Test for it using `isFinite(number)`.
-
 ### Strings
 Strings are sequences of _unicode_ characters. To represent single char we use string of length 1.
 
 And strings are objects as well. They have properties(`length`), methods(`replace(from, to)`, `charAt(pos)`).
-
 ### `null` vs `undefined`
 `null` is an object of type `object` that indicates a deliberate non-value.
 `undefined` is object of type `undefined` that indicates an uninitialized value.
-
 ### Boolean
 
 * `false`, `0`, `""`, `NaN`, `null`, `undefined` give `false`
 * everything else gives `true`
 
 Convert to `Boolean` using `Boolean(var)`.
-
 ### Variables
 
 Declare variable using `var` keyword. In JavaScript blocks do not have their scope. Only functions have their own scope.
 
-####### `+` operator
+#### `+` operator
 Sums numbers and concatenates strings. Concatenates with string.
 
     > "3" + 4 + 5
@@ -54,7 +50,7 @@ Sums numbers and concatenates strings. Concatenates with string.
     > 3 + 4 + "5"
     75
 
-####### Comparisons
+#### Comparisons
     > "dog" == "dog"
     true
     > 1 == true
@@ -66,32 +62,8 @@ To avoid type coercion, use the triple-equals operator:
     > true === true
     true
 There are also != and !== operators.
-
-### Variables
-
-Declare variable using `var` keyword. In JavaScript blocks do not have their scope. Only functions have their own scope.
-
-####### `+` operator
-Sums numbers and concatenates strings. Concatenates with string.
-
-    > "3" + 4 + 5
-    345
-    > 3 + 4 + "5"
-    75
-
-####### Comparisons
-    > "dog" == "dog"
-    true
-    > 1 == true
-    true
-To avoid type coercion, use the triple-equals operator:
-
-    > 1 === true
-    false
-    > true === true
-    true
-There are also != and !== operators.
-
+### Control Statements
+`if`-`else`, `switch`-`case`, `for`-`while`-`do-while` work in the same way as in C.
 ### Objects
 Objects are key-value pairs collections. Similar to `dict` in Python.
 
@@ -120,7 +92,6 @@ Object initialisation syntax:
             size: 12
         }
     }
-
 
 ### Arrays
 Arrays are a spectial type type of object.
@@ -153,7 +124,6 @@ Another way to iterate though all items is:
     for (var i in a) {}
 
 Some methods of arrays: `push(item[, itemN])`, `pop()`, `reverse()`, `shift()`, `join(sep)`, `toString()`, `concat(item[, itemN])`, `slice(start, end)`, `sort([compfn])`, `splice(start, delcount[, itemN])`, `unshift([item])`
-
 ### Functions
 Function looks like this:
 
@@ -252,7 +222,6 @@ We can declare function inside function:
     }
 
 Inner functions share namespace of parent function.
-
 ### Closures
 
     function makeAdder(a) {
@@ -276,7 +245,7 @@ Scope objects form a chain called the scope chain, similar to the prototype chai
 A closure is the combination of a function and the scope object in which it was created.
 
 Closures let you save state — as such, they can often be used in place of objects.
-
 [Source][0] is the article on developers.mozilla.org
 
 [0]: https://developer.mozilla.org/en-US/docs/JavaScript/A_re-introduction_to_JavaScript?redirectlocale=en-US&redirectslug=A_re-introduction_to_JavaScript
+
