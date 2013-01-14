@@ -1,4 +1,4 @@
-Recently I started learning Objective-C and Cocoa framework. I thought it would be easy as I already have some experience with C### and Java. But it appears to be not that easy. Here are some notes I took to map Objective-C to C#.
+Recently I started learning Objective-C and Cocoa framework. I thought it would be easy as I already have some experience with C# and Java. But it appears to be not that easy. Here are some notes I took to map Objective-C to C#.
 
 ### Objective-C
 - Weakly typed
