@@ -28,6 +28,7 @@ Three main frameworks:
 - Option+Click on any piece of code shows docs
 - `@` sign before string literal means Objective-C string class `NSString`
 - NSLog has printf-like syntax, but has different identifiers (`%d`, `%qi` for `long long`, `hi` for `short`, etc)
+- In NSLog `%@` accepts object pointer and expands it to string by calling `[obj description]`.
 - `NSObject.isEqual:anotherObject` by default compares pointers
 - Methods starting with `-` are instance methods, starting with `+` are class methods, or static methods
 - ARC - automatic reference count is GC and can be disabled for project for manual memory management
