@@ -43,6 +43,33 @@ Three main frameworks:
 - `NSArray` can not have `nil` in it
 - `NSArray`, `NSNumber` and `NSString` are immutable
 
+### Manual memory management rules
+- If you create an object by using a method whose name starts with `alloc` or `new` or contains `copy`, you have taken ownership of it. (That is, assume that the new object has a retain count of 1 and is not in the `autorelease pool`.) You have a responsibility to release the object when you no longer need it. Some of the common methods that convey ownership are `alloc` (which is always followed by an `init` method), `copy`, and `mutableCopy`.
+- An object created through any other means, such as a convenience method, is not owned by you. (That is, assume that it has a retain count of 1 and is already in the autorelease pool and thus doomed unless it is retained before the autorelease pool is drained.)
+- If you don’t own an object and want to ensure its continued existence, take ownership by sending it the message retain. (This increments the retain count.)
+- When you own an object and no longer need it, send it the message `release` or `autorelease`. (The message release decrements the retain count immediately; autorelease causes the message release to get sent when the `autorelease pool` is drained.)
+- As long as it has at least one owner, an object will continue to exist- (When its retain count goes to zero, it is sent the message `dealloc`.)
+
+### Controls
+#### `NSButton`
+Can be oval, square, checkbox. Most common messages sent to buttons:
+
+```objectivec
+- (void)setEnabled:(BOOL)yn
+- (NSInteger)state
+- (void)setState:(NSInteger)aState
+```
+
+#### `NSSlider`
+Used to select values in ranges. Can be vertical, horizontal and circular. Can send messages continiously while dragging and can send once on mouse button release. Can have markers and prevent selecting values between markers. Two most used messages:
+
+```objectivec
+- (void)setFloatValue:(float)x
+- (float)floatValue
+```
+
+#### `NSField`
+
 ### My mappings for Cocoa objects
 
 - `NSMutableArray <=> vector`
