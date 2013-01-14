@@ -1,4 +1,4 @@
-# Data types:
+#### Data types:
 
 * Number
 * String
@@ -12,7 +12,7 @@
 * Undefined
 * Error
 
-# Numbers
+#### Numbers
 
 Numbers by specs are "double-precision 64-bit format IEEE 754 values", so there is no integers bt specs. But browsers' implementation of numbers can differ and can implement in simple 32-bit integer type.
 
@@ -26,27 +26,27 @@ Anything combined with `NaN` is `NaN` and you can check for it using `isNaN(numb
 
 Also JS has values `Infinity` and `-Infinity`. They are achiveable dividing by 0. Test for it using `isFinite(number)`.
 
-# Strings
+#### Strings
 Strings are sequences of _unicode_ characters. To represent single char we use string of length 1.
 
 And strings are objects as well. They have properties(`length`), methods(`replace(from, to)`, `charAt(pos)`).
 
-# `null` vs `undefined`
+#### `null` vs `undefined`
 `null` is an object of type `object` that indicates a deliberate non-value.
 `undefined` is object of type `undefined` that indicates an uninitialized value.
 
-# Boolean
+#### Boolean
 
 * `false`, `0`, `""`, `NaN`, `null`, `undefined` give `false`
 * everything else gives `true`
 
 Convert to `Boolean` using `Boolean(var)`.
 
-# Variables
+#### Variables
 
 Declare variable using `var` keyword. In JavaScript blocks do not have their scope. Only functions have their own scope.
 
-## `+` operator
+######## `+` operator
 Sums numbers and concatenates strings. Concatenates with string.
 
     > "3" + 4 + 5
@@ -54,7 +54,7 @@ Sums numbers and concatenates strings. Concatenates with string.
     > 3 + 4 + "5"
     75
 
-## Comparisons
+######## Comparisons
     > "dog" == "dog"
     true
     > 1 == true
@@ -67,11 +67,11 @@ To avoid type coercion, use the triple-equals operator:
     true
 There are also != and !== operators.
 
-# Variables
+#### Variables
 
 Declare variable using `var` keyword. In JavaScript blocks do not have their scope. Only functions have their own scope.
 
-## `+` operator
+######## `+` operator
 Sums numbers and concatenates strings. Concatenates with string.
 
     > "3" + 4 + 5
@@ -79,7 +79,7 @@ Sums numbers and concatenates strings. Concatenates with string.
     > 3 + 4 + "5"
     75
 
-## Comparisons
+######## Comparisons
     > "dog" == "dog"
     true
     > 1 == true
@@ -92,7 +92,7 @@ To avoid type coercion, use the triple-equals operator:
     true
 There are also != and !== operators.
 
-# Objects
+#### Objects
 Objects are key-value pairs collections. Similar to `dict` in Python.
 
 Create empty object:
@@ -122,7 +122,7 @@ Object initialisation syntax:
     }
 
 
-# Arrays
+#### Arrays
 Arrays are a spectial type type of object.
 
     // old way
@@ -154,7 +154,7 @@ Another way to iterate though all items is:
 
 Some methods of arrays: `push(item[, itemN])`, `pop()`, `reverse()`, `shift()`, `join(sep)`, `toString()`, `concat(item[, itemN])`, `slice(start, end)`, `sort([compfn])`, `splice(start, delcount[, itemN])`, `unshift([item])`
 
-# Functions
+#### Functions
 Function looks like this:
 
     function add(x,y) {
@@ -186,7 +186,7 @@ Make call of anonymous function:
     
     (function(a, b) { return a + b; })();
 
-# Custom objects
+#### Custom objects
 There is no `class` keyword, so people use bunch of different methods to create OO-classes. But simple classes are functions.
 
 Used inside a function, `this` refers to the current object. What that actually means is specified by the way in which you called that function. If you called it using dot notation or bracket notation on an object, that object becomes `this`. If dot notation wasn't used for the call, `this` refers to the global object. This is a frequent cause of mistakes.
@@ -241,7 +241,7 @@ The prototype forms part of a chain. The root of that chain is Object.prototype,
     > s
     <Person: Simon Willison>
 
-# Inner functions
+#### Inner functions
 We can declare function inside function:
 
     function first(x) {
@@ -253,7 +253,7 @@ We can declare function inside function:
 
 Inner functions share namespace of parent function.
 
-# Closures
+#### Closures
 
     function makeAdder(a) {
         return function(b) {
