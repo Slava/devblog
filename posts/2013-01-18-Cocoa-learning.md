@@ -32,6 +32,15 @@ Three main frameworks:
 - `NSObject.isEqual:anotherObject` by default compares pointers
 - Methods starting with `-` are instance methods, starting with `+` are class methods, or static methods
 - ARC - automatic reference count is GC and can be disabled for project for manual memory management
+- To get selector for method use macros `@selector(method-name)`.
+- You can programmatically set actions to methods:
+
+	```objectivec
+	SEL mySelector;
+	mySelector = @selector(drawMickey:);
+	[myButton setAction:mySelector];
+	```
+- For selector at runtime from string use `NSSelectorFromString(@"drawMickey:");`.
 
 ### Some types and constants
 - `id` is pointer to any type of object
@@ -80,11 +89,33 @@ Single line input field. Uneditable fields are used as labels.  `NSSecureTextFie
 
 Second pair is used in case you use `NSFormatter`s or just `description` method of object.
 
+### Helper objects
+Many classes in the Cocoa framework have an instance variable called `delegate`, you can set the `delegate` outlet to point to a helper object. After some events occur class will refer to helper object. You do not need to implement all helper methods described in documentation. Unimplemented methods will be ignored.
+
+So helper object is object that implements certain protocol (`interface` in Java).
+
+### Key-Value Coding
+Similarly to to JS, we can refer to objects instance property by string key.
+
+```objectivec
+@interface Student : NSObject
+{
+	NSString *firstName;
+}
+...
+@ends
+...
+Student *s = [[Student alloc] init];
+[s setValue:@"Larry" forKey:@"firstName"];
+NSString *x = [s valueForKey:@"firstName"];
+```
+
 ### My mappings for Cocoa objects
 
 - `NSMutableArray <=> vector`
 - `NSString <=> string`
 - `for (LotteryEntry *entryToPrint in array) <=> foreach`
 - `NSAssert <=> assert`
-
+- `interface + implementation <=> class`
+- `protocol <=> interface`
 
