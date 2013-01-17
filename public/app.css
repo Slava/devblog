@@ -1,3 +1,5 @@
+/* Code highlighting */
+
 pre {
   line-height: 100%;
 }
@@ -109,45 +111,16 @@ pre .xml .vbscript,
 pre .tex .formula {
   opacity: 0.5;
 }
-/*
-body {
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-    padding:20px;
-    margin:0;
-}
+
 
 h1 {
     font-size:19pt;
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
     letter-spacing: -1px;
 }
 
 h1 a {
     text-decoration:none;
     color:#333;
-}
-
-pre, code {
-    font-family: monaco, monospace;
-    overflow-x: auto;
-    width: 100%;
-}
-
-pre {
-    border:1px solid #5d6778;
-    border-radius:5px;
-    -moz-border-radius: 5px;
-    padding:10px 10px 20px 0;
-    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#000), to(#0F2925));
-    background:-moz-linear-gradient(top, #000, #0F2925);
-}
-
-hr {
-    border:none;
-    background-color: #eaeaea;
-    height: 10px;
-    border-radius:5px;
-    -moz-border-radius: 5px;
 }
 
 #wrap {
@@ -200,45 +173,10 @@ hr {
 
 #nav ul li:first-child a {
     color:#FF0000;
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
     letter-spacing: -1px;
     font-size:19pt;
 }
 
-#content {
-
-}
-
-#pager {
-    height:48px;
-    background:#eaeaea;
-    border:1px solid #eaeaea;
-    border-radius:5px;
-    -moz-border-radius: 5px;
-}
-
-#prev {
-    float:left;
-    margin:0 0 0 20px;
-}
-
-#next {
-    float:right;
-    margin:0 20px 0;
-}
-
-#prev,
-#next {
-    text-decoration:none;
-    display:block;
-    font-size:30pt;
-    color:#333;
-    text-shadow: 0px 3px 0px #fff;
-}
-
-.clear {
-    clear:both;
-}
 
 .date {
   color: #666666;
@@ -264,7 +202,6 @@ hr {
     text-shadow: 0px -1px 0px #000;
     line-height:48px;
 }
-*/
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
@@ -282,12 +219,6 @@ body{
   outline: 1300px solid #FAFAFA;
 }
 
-a{ color: #0645ad; text-decoration:none;}
-a:visited{ color: #0b0080; }
-a:hover{ color: #06e; }
-a:active{ color:#faa700; }
-a:focus{ outline: thin dotted; }
-a:hover, a:active{ outline: 0; }
 
 span.backtick {
   border:1px solid #EAEAEA;
@@ -364,6 +295,11 @@ img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
+
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: black;
+}
 
 @media only screen and (min-width: 480px) {
 body{font-size:14px;}
