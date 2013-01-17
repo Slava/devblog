@@ -33,14 +33,7 @@ Three main frameworks:
 - Methods starting with `-` are instance methods, starting with `+` are class methods, or static methods
 - ARC - automatic reference count is GC and can be disabled for project for manual memory management
 - To get selector for method use macros `@selector(method-name)`.
-- You can programmatically set actions to methods:
-
-	```objectivec
-	SEL mySelector;
-	mySelector = @selector(drawMickey:);
-	[myButton setAction:mySelector];
-	```
-- For selector at runtime from string use `NSSelectorFromString(@"drawMickey:");`.
+- Document-based application means application runs several copies of itself per opened file, like text editor. System Preferences, for example, is not a document-based application.
 
 ### Some types and constants
 - `id` is pointer to any type of object
@@ -89,10 +82,32 @@ Single line input field. Uneditable fields are used as labels.  `NSSecureTextFie
 
 Second pair is used in case you use `NSFormatter`s or just `description` method of object.
 
+### temp
+- You can programmatically set actions to methods:
+
+	```objectivec
+	SEL mySelector;
+	mySelector = @selector(drawMickey:);
+	[myButton setAction:mySelector];
+	```
+- For selector at runtime from string use `NSSelectorFromString(@"drawMickey:");`.
+
 ### Helper objects
 Many classes in the Cocoa framework have an instance variable called `delegate`, you can set the `delegate` outlet to point to a helper object. After some events occur class will refer to helper object. You do not need to implement all helper methods described in documentation. Unimplemented methods will be ignored.
 
 So helper object is object that implements certain protocol (`interface` in Java).
+BTW syntax of implementing protocol:
+
+```objectivec
+@interface ClassName : ParentClass <Interface1, Interface2, ... > {
+	// vars
+}
+
+// methods
+// properties
+
+@end
+```
 
 ### Key-Value Coding
 Similarly to to JS, we can refer to objects instance property by string key.
@@ -108,6 +123,73 @@ Similarly to to JS, we can refer to objects instance property by string key.
 Student *s = [[Student alloc] init];
 [s setValue:@"Larry" forKey:@"firstName"];
 NSString *x = [s valueForKey:@"firstName"];
+```
+
+KVC works in pair with binding to GUI, which does not work with direct access to variable. If there are getters and setters for variable, they will be used by methods `setValue:forKey:` and `valueForKey:` only if names of getter and setter satisfy convention `foo` and `setFoo` for property `foo`.
+
+To make other methods affect to bindings, use getters-setters or KVC for changing variable.
+
+### Attributes of property
+Syntax for attribute:
+
+```objectivec
+@property (attributes) type name;
+```
+
+Types of attributes (copy-paste from book):
+- `assign` (the default) makes a simple assignment happen. This attribute is most commonly used for scalar, nonpointer types, such as integers and floating-point values.
+- `strong` says that this property is a strong reference. It keeps the object being pointed to from being deallocated while this pointer is set. It is specific to ARC code; if you are not using ARC, the retain attribute is equivalent.
+- `weak` denotes a weak reference. It is similar to assign, except that once the object being pointed to is deallocated, this property will be set to nil. It is supported only by code compiled with ARC.
+- `copy` makes a copy of the new value and assigns the variable to the copy. This attribute is often used for properties that are strings and other classes with mutable subclasses.
+
+There is also `nonatomic` which is self-explanatory, by default getters and setters are atomic.
+
+### Key pathes
+If you look better, objects create directed graph. So to any object we can find several pathes, including that starts in itself. You can use it to access variable:
+
+```objectivec
+NSString *mn = [selectedPerson valueForKeyPath:@"spouse.scooter.modelName"];
+```
+
+You even can use operators in pathes such as `@avg`, `@count`, `@max`, `@min`, `@sum`:
+
+```objectivec
+NSNumber *theAverage = [employees valueForKeyPath:@"@avg.expectedRaise"];
+```
+
+### Programmatical binding
+You can bind programmatically one object to another using pathes:
+
+```objectivec
+[textField bind:@"value" toObject:employeeController withKeyPath:@"arrangedObjects.@avg.expectedRaise" options:nil];
+```
+
+And unbind:
+
+```objectivec
+[textField unbind:@"value"];
+```
+
+### Programmatically add observer
+Similarly to C#'s `+=` and `-=` event operators(but less functionally reach) you can add observer for value:
+
+```objectivec
+[theAppDelegate addObserver:self
+	             forKeyPath:@"fido"
+	                options:NSKeyValueChangeOldKey
+	                context:somePointer];
+```
+
+The method that is triggered looks like this:
+
+```objectivec
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+...
+}
 ```
 
 ### My mappings for Cocoa objects
