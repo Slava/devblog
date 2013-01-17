@@ -294,6 +294,10 @@ a, a:visited, a:hover, a:active {
   color: black;
 }
 
+a, a:visited {
+  background-color: #FFFFDB;
+}
+
 @media only screen and (min-width: 480px) {
 body{font-size:14px;}
 }
