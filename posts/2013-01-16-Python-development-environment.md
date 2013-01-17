@@ -17,10 +17,10 @@ Last thing. As a unexperienced developer I faced such situation a lot of times: 
 
 As for now, I feel really good in such environment and hope I do not waste much time on typing and debugging but on actual building things.
 
-- `virtualenv`: [][1]
-- `virtualenvwrapper`: [][2]
-- `pip`: [][3]
-- `ipython`: [][4]
+- [`virtualenv`][1]
+- [`virtualenvwrapper`][2]
+- [`pip`][3]
+- [`ipython`][4]
 
 [1]: http://www.virtualenv.org/
 [2]: http://virtualenvwrapper.readthedocs.org/
