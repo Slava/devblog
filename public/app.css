@@ -124,7 +124,7 @@ h1 a {
 }
 
 #wrap {
-    width:800px;
+    width: 44em;
     margin:0 auto 0 auto;
 }
 
@@ -170,13 +170,6 @@ h1 a {
     background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#000), to(#010F01));
     background:-moz-linear-gradient(top, #000, #010F01);
 }
-
-#nav ul li:first-child a {
-    color:#FF0000;
-    letter-spacing: -1px;
-    font-size:19pt;
-}
-
 
 .date {
   color: #666666;
