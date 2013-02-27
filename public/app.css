@@ -314,6 +314,32 @@ body{font-size:14px;}
 body{font-size:16px;}
 }
 
+#pager {
+    height:48px;
+    background:#eaeaea;
+    border:1px solid #eaeaea;
+    border-radius:5px;
+    -moz-border-radius: 5px;
+}
+
+#prev {
+    float:left;
+    margin:0 0 0 20px;
+}
+
+#next {
+    float:right;
+    margin:0 20px 0;
+}
+
+#prev,
+#next {
+    text-decoration:none;
+    display:block;
+    font-size:30pt;
+    color:#333;
+    text-shadow: 0px 3px 0px #fff;
+}
 @media print {
   * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
   body{font-size:12pt; max-width:100%;}
