@@ -14,7 +14,7 @@ Issue you can meet after implementing fency cell layer: renaming of title in `OE
 
 Another issue I ran into was the fact that grid view reuses cell instances. `- (OEGridViewCell *)gridView:cellForItemAtIndex:` should be implemented in the way similar to this:
 
-```objective-c
+```objectivec
 - (OEGridViewCell *)gridView:(OEGridView *)gridView cellForItemAtIndex:(NSUInteger)index
 {
     // Maybe cell on such position already exists?
